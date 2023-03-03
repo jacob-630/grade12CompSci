@@ -1,9 +1,15 @@
 package day05;
-
+import java.util.Scanner;;
 public class main {
     public static void main(String[] args) {
-        car c = new car();
-        car d = new car("porsche", "911 turbo s", 2013);
+        Scanner inp = new Scanner(System.in);
+        System.out.println("input your cars make, model and year keeping in "
+        +"mind the make and model can only be one word each");
+        String mke = inp.next();
+        String modl = inp.next();
+        int yer = inp.nextInt();
+
+        car d = new car(mke, modl, yer);
         
     }
 }
