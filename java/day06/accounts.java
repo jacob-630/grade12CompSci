@@ -13,7 +13,7 @@ public class accounts {
     accounts(float savings, float chequings){
         this.savings = savings;
         this.chequings = chequings;
-        System.out.println("savings: "+this.savings + " " + "chequings:" + this.chequings);
+        System.out.println("savings: "+this.savings + " " + "chequings: " + this.chequings);
     }
     //overload function for accounts, used for when credit is added
     accounts(float savings, float chequings, float credit){
@@ -59,11 +59,15 @@ public class accounts {
         System.out.println("Insifficent funds in the selected account.");
     }
     }
+
+
     //check how much credit the account holder is eligible for
+   
     public static float credit(){
-        float total = (chequings + savings)/2;
-        System.out.println("you are approved for credit up to $"+total);
-        return total;
+            float total = (chequings + savings)/2;
+            System.out.println("you are approved for credit up to $"+total);
+            return total;
+        
     }
 
 }
