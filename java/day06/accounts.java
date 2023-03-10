@@ -75,11 +75,30 @@ public class accounts {
     public static void trnsfr(int s, float amt){
         //1 Refers to Chequings to Savings
         if(s == 1){
+            //Check that they have the requested balance
+            if(chequings >= amt){
             //Move 'amt' from chequings to savings
+                chequings -= amt;
+                savings += amt;
+                System.out.println("savings balance: $"+savings+" chequings balance: $"+chequings);
+            }
+            else{
+                System.out.println("you do not have $"+amt+" in your chequings account");
+            }
         }
         //2 refers to Savings to Chequings
         else if(s == 2){
             //Move 'amt' from savings to chequings
+            //Check that they have the requested balance
+            if(savings >= amt){
+                //Move 'amt' from savings to chequings
+                    chequings += amt;
+                    savings -= amt;
+                    System.out.println("savings balance: $"+savings+" chequings balance: $"+chequings);
+                }
+                else{
+                    System.out.println("you do not have $"+amt+" in your savings account");
+                }
         }
     }
 }

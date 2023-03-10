@@ -100,14 +100,14 @@ public class main {
                 //Transfer money between accounts
                 else if(chngs.equals("transfer")){
                     System.out.println("How much money would you like to transfer:");
-                    float amt =Float.valueOf(inp.next());
+                    float TransfrAmt =Float.valueOf(inp.next());
                     System.out.println("How would you like to transfer funds. Please enter either 'CtoS' or 'StoC'" );
-                    String trnsfr = inp.next();
+                    String trnsfr = inp.next().toLowerCase();
                     if(trnsfr.equals("CtoS")){
-                        accounts.trnsfr(1, amt);
+                        accounts.trnsfr(1, TransfrAmt);
                     }
                     else if(trnsfr.equals("StoC")){
-                        accounts.trnsfr(2, amt);
+                        accounts.trnsfr(2, TransfrAmt);
                     }
                 }
                 else{
