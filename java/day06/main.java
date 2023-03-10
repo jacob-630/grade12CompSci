@@ -7,7 +7,7 @@ public class main {
         System.out.println("your pin will be " + pin);
         //create the scanner for input
         Scanner inp = new Scanner(System.in);
-        System.out.println("Would you like to enter your account? if so please enter your pin.");
+        System.out.println("Would you like to enter your account? if so please enter your pin. (your pin is in the line above)");
         int ans = (inp.nextInt());
         //check that they do wish to enter account
         if(ans == pin){
@@ -24,7 +24,7 @@ public class main {
             //a loop to run for forever unless broken with 'break' command
             while(1 < 2){
                 System.out.println("What would you like to do? enter "
-                +"'deposit', 'withdraw', 'credit', 'cmpndInt' or anything else to leave");
+                +"'deposit', 'withdraw', 'credit', 'cmpndInt', 'transfer' or anything else to leave");
                 String chngs = inp.next().toLowerCase();
                 //first layer of if statements; check which account the user would like to manipulate:
                 if(chngs.equals("deposit")){
@@ -96,6 +96,19 @@ public class main {
                     
                     System.out.println("The sum of the money you will make is " + sum);
 
+                }
+                //Transfer money between accounts
+                else if(chngs.equals("transfer")){
+                    System.out.println("How much money would you like to transfer:");
+                    float amt =Float.valueOf(inp.next());
+                    System.out.println("How would you like to transfer funds. Please enter either 'CtoS' or 'StoC'" );
+                    String trnsfr = inp.next();
+                    if(trnsfr.equals("CtoS")){
+                        accounts.trnsfr(1, amt);
+                    }
+                    else if(trnsfr.equals("StoC")){
+                        accounts.trnsfr(2, amt);
+                    }
                 }
                 else{
                     System.out.println("okay, have a good day");

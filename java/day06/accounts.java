@@ -62,7 +62,6 @@ public class accounts {
 
 
     //check how much credit the account holder is eligible for
-   
     public static float credit(){
             float total = (chequings + savings)/2;
             System.out.println("you are approved for credit up to $"+total);
@@ -70,4 +69,19 @@ public class accounts {
         
     }
 
+
+
+
+    public static void trnsfr(int s, float amt){
+        //1 Refers to Chequings to Savings
+        if(s == 1){
+            //Move 'amt' from chequings to savings
+        }
+        //2 refers to Savings to Chequings
+        else if(s == 2){
+            //Move 'amt' from savings to chequings
+        }
+    }
 }
+
+
