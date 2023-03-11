@@ -38,13 +38,13 @@ public class main {
                         System.out.println("How much would you like to deposit?");
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
-                        accounts.savingsDepo(depAmt);
+                        accountChanges.savingsDepo(depAmt);
                     }
                     else if(acc.equals("chequings")){
                         System.out.println("How much would you like to deposit?");
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
-                        accounts.chequingsDepo(depAmt);
+                        accountChanges.chequingsDepo(depAmt);
                     }
                     //default case with a System exit to end the program
                     else{
@@ -63,14 +63,14 @@ public class main {
                         System.out.println("How much would you like to withdraw?");
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
-                        accounts.savingsWith(depAmt);
+                        accountChanges.savingsWith(depAmt);
                     }
                     //withdraw from chequings
                     else if(acc.equals("chequings")){
                         System.out.println("How much would you like to withdraw?");
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
-                        accounts.chequingWith(depAmt);
+                        accountChanges.chequingWith(depAmt);
                     }
                     //else statement to catch all exceptions
                     else{
@@ -79,8 +79,8 @@ public class main {
                     }
                 }
                 else if(chngs.equals("credit")){
-                    accounts.credit();
-                    d = new accounts(savingsBal, chequingsBal, accounts.credit());
+                    accountChanges.credit();
+                    d = new accounts(savingsBal, chequingsBal, accountChanges.credit());
                 }
 
                 //input a compound interest calculation that can also hand additional annual contributions
@@ -103,11 +103,11 @@ public class main {
                     float TransfrAmt =Float.valueOf(inp.next());
                     System.out.println("How would you like to transfer funds. Please enter either 'CtoS' or 'StoC'" );
                     String trnsfr = inp.next().toLowerCase();
-                    if(trnsfr.equals("CtoS")){
-                        accounts.trnsfr(1, TransfrAmt);
+                    if(trnsfr.equals("ctos")){
+                        accountChanges.trnsfr(1, TransfrAmt);
                     }
-                    else if(trnsfr.equals("StoC")){
-                        accounts.trnsfr(2, TransfrAmt);
+                    else if(trnsfr.equals("stoc")){
+                        accountChanges.trnsfr(2, TransfrAmt);
                     }
                 }
                 else{
