@@ -12,23 +12,13 @@ public class main {
         //check that they do wish to enter account
         if(ans.equals("yes")){
             
-            //convert balances to floats and then create an instance of accounts
-            // if(!"Savings.txt".isEmpty()){
-            //     readFile rf = new readFile();
-            //     String savingsBalS = rf.readFile("Savings.txt");
-            //     readFile rfc = new readFile();
-            //     String chequingsBalS = rf.readFile("Chequings.txt");
-            //     Float savingsBal = new Float(savingsBalS);
-            //     Float chequingsBal = new Float(chequingsBalS);
-            //     accounts d = new accounts(savingsBal, chequingsBal);
-
-            // }else{
-                Float savingsBal = (float) 1000.0;
-                Float chequingsBal = (float) 1000;
-                accounts d = new accounts(savingsBal, chequingsBal);
-            //}
+            //initalize account
+            Float savingsBal = (float) 1000.0;
+            Float chequingsBal = (float) 1000;
+            accounts d = new accounts(savingsBal, chequingsBal);
             
             
+            //Create Files for savings and chequings accounts if they dont already exist
             createFile savingsFile = new createFile();
             savingsFile.createFile("Savings.txt");
             createFile chequingsFile = new createFile();
@@ -54,6 +44,7 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.savingsDepo(depAmt);
+                        //Write to the file the changes being made
                         writeFile wf = new writeFile();
                         wf.writeFile("Savings.txt", Float.toString(accounts.savings));
                     }
@@ -62,6 +53,7 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.chequingsDepo(depAmt);
+                        //Write to the file the changes being made
                         writeFile wf = new writeFile();
                         wf.writeFile("Chequings.txt", Float.toString(accounts.chequings));
                     }
@@ -83,6 +75,7 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.savingsWith(depAmt);
+                        //Write to the file the changes being made
                         writeFile wf = new writeFile();
                         wf.writeFile("Savings.txt", Float.toString(accounts.savings));
                     }
@@ -92,6 +85,7 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.chequingWith(depAmt);
+                        //Write to the file the changes being made
                         writeFile wf = new writeFile();
                         wf.writeFile("Chequings.txt", Float.toString(accounts.chequings));
                     }
