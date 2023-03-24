@@ -1,6 +1,7 @@
 package day08;
 import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 public class main {
     public static void main(String[] args) {
@@ -10,12 +11,24 @@ public class main {
         String ans = (inp.next().toLowerCase());
         //check that they do wish to enter account
         if(ans.equals("yes")){
-            int savingsBal = 1000;
-            int chequingsBal = 1000;
-            System.out.println("input your savings account balance followed "
-            +"by your checking account balance");
+            
             //convert balances to floats and then create an instance of accounts
-            accounts d = new accounts(savingsBal, chequingsBal);
+            // if(!"Savings.txt".isEmpty()){
+            //     readFile rf = new readFile();
+            //     String savingsBalS = rf.readFile("Savings.txt");
+            //     readFile rfc = new readFile();
+            //     String chequingsBalS = rf.readFile("Chequings.txt");
+            //     Float savingsBal = new Float(savingsBalS);
+            //     Float chequingsBal = new Float(chequingsBalS);
+            //     accounts d = new accounts(savingsBal, chequingsBal);
+
+            // }else{
+                Float savingsBal = (float) 1000.0;
+                Float chequingsBal = (float) 1000;
+                accounts d = new accounts(savingsBal, chequingsBal);
+            //}
+            
+            
             createFile savingsFile = new createFile();
             savingsFile.createFile("Savings.txt");
             createFile chequingsFile = new createFile();
@@ -26,7 +39,7 @@ public class main {
             //a loop to run for forever unless broken with 'break' command
             while(1 < 2){
                 System.out.println("What would you like to do? enter "
-                +"'deposit', 'withdraw', 'credit', 'cmpndInt', 'transfer', 'checkBalance' or anything else to leave");
+                +"'deposit', 'withdraw', or anything else to quit the program");
                 String chngs = inp.next().toLowerCase();
                 //first layer of if statements; check which account the user would like to manipulate:
                 if(chngs.equals("deposit")){
@@ -41,12 +54,16 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.savingsDepo(depAmt);
+                        writeFile wf = new writeFile();
+                        wf.writeFile("Savings.txt", Float.toString(accounts.savings));
                     }
                     else if(acc.equals("chequings")){
                         System.out.println("How much would you like to deposit?");
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.chequingsDepo(depAmt);
+                        writeFile wf = new writeFile();
+                        wf.writeFile("Chequings.txt", Float.toString(accounts.chequings));
                     }
                     //default case with a System exit to end the program
                     else{
@@ -66,6 +83,8 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.savingsWith(depAmt);
+                        writeFile wf = new writeFile();
+                        wf.writeFile("Savings.txt", Float.toString(accounts.savings));
                     }
                     //withdraw from chequings
                     else if(acc.equals("chequings")){
@@ -73,6 +92,8 @@ public class main {
                         String depo = inp.next();
                         Float depAmt = Float.valueOf(depo);
                         accountChanges.chequingWith(depAmt);
+                        writeFile wf = new writeFile();
+                        wf.writeFile("Chequings.txt", Float.toString(accounts.chequings));
                     }
                     //else statement to catch all exceptions
                     else{
@@ -82,7 +103,7 @@ public class main {
                 }
                 else if(chngs.equals("credit")){
                     accountChanges.credit();
-                    d = new accounts(savingsBal, chequingsBal, accountChanges.credit());
+                    d = new accounts(accounts.savings, accounts.chequings, accountChanges.credit());
                 }
                 else{
                     System.out.println("okay, have a good day");
@@ -91,7 +112,7 @@ public class main {
             }
         }
         else{
-            System.out.println("Invalid Pin, access denied.");
+            System.out.println("Okay. Have a good day.");
             System.exit(0);
         }
     }
