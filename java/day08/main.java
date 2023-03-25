@@ -1,8 +1,5 @@
 package day08;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 public class main {
     public static void main(String[] args) {
         //create the scanner for input
