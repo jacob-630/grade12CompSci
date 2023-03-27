@@ -2,7 +2,6 @@ package day08;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 public class readFile {
     public static String readFile(String file){
         String out = new String();
