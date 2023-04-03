@@ -5,6 +5,7 @@ public class main {
         Scanner inp = new Scanner(System.in);
         String quiz[][] = new String[5][6];
         String playerAnswers[] = new String[5];
+        
         //question one
         quiz[0][0] = "1: what is the sum of 100 and 356?(Enter Either A, B, C or D)";
         quiz[0][1] = "A: 456";
@@ -51,7 +52,12 @@ public class main {
                 System.out.println(quiz[i][j]);
             }
             playerAnswers[i] = inp.nextLine().toUpperCase();
-            
+            while(!playerAnswers[i].equals("A")&& !playerAnswers[i].equals("B")
+             && !playerAnswers[i].equals("C") && !playerAnswers[i].equals("D")){
+                System.out.println("Invalid input, please try again");
+                playerAnswers[i] = inp.nextLine().toUpperCase();
+                
+            }
             if(playerAnswers[i].equals(quiz[i][5])){
                 System.out.println("Congratulations! That was the Correct Answer");
                 correctAns++;
