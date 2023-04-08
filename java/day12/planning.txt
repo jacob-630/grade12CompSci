@@ -1,0 +1,14 @@
+have random number generators to make certain events RNG based
+have choices with consequences ie.
+    "allocate what percent to attack v defence"you focused to much on attack and died
+have a rpg kind of dialogue, potentially multiple choice and numeric input
+have a cash system to buy "training" boosting a stat
+
+
+
+Intro:
+    get players name and faction as well as give them $100
+    have a practice fight to initalize battle system in the code and to the player
+    begin setting up for later fights
+    give oppurtonity to pay to trainin
+    give oppurtonity to make money
