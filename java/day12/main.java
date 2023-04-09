@@ -27,8 +27,17 @@ public class main {
         ArrayList playerStats = charcters.playerStats(faction);
         System.out.println("Now lets get some practice in before going off to battle");
         System.out.println("This gremlin is going to try to attack you so give it your all");
-        System.out.println("here it comes! now choose your attack A) attack the gremlin B) dodge the gremlin");
-        
+        System.out.println("here it comes! now attack");
+        ArrayList enemy1 = charcters.createEnemy(1, 20, 15);
+
+        //currently not working
+        if(charcters.battle(playerStats, enemy1)){
+            System.out.println("very good you won!, your health is now " + playerStats.get(0));
+        }
+        else{
+            System.out.println("Oh no, they got you and you died :(");
+            System.exit(0);
+        }
 
         
 
