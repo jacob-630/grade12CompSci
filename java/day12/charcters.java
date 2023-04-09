@@ -8,6 +8,7 @@ public class charcters {
         //Health
         //Strength
         //Speed
+        // Money 
         if(choice.equals("ork")){
             player.add(100);
             player.add(66);
@@ -28,6 +29,15 @@ public class charcters {
             " eliminate you as you are a potential threat and kill you");
             System.exit(0);
         }
+        player .add(100);
         return player;
+    }
+
+    public static ArrayList createEnemy(Integer health, Integer strength, Integer speed){
+        ArrayList<Integer> enemy = new ArrayList<Integer>();
+        enemy.add(health);
+        enemy.add(strength);
+        enemy.add(speed);
+        return enemy;
     }
 }

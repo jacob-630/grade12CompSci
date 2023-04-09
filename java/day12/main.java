@@ -18,15 +18,19 @@ public class main {
         System.out.println("Now as for you, which faction do you reside in? \n Ork? \n Wizard? \n Elf?");
         String faction = inp.nextLine().toLowerCase();
         System.out.println("Ah I see, alright "+name+" the "+faction);
+        System.out.println("With inflation these days things can get pretty pricey so heres $100 "+
+        "it wont get you far but it's a start I suppose.");
+        System.out.println("$100 has been added to your account.\n\n\n\n");
 
 
         //Assigning the player to the stats of the faction they chose
         ArrayList playerStats = charcters.playerStats(faction);
+        System.out.println("Now lets get some practice in before going off to battle");
+        System.out.println("This gremlin is going to try to attack you so give it your all");
+        System.out.println("here it comes! now choose your attack A) attack the gremlin B) dodge the gremlin");
         
-        //have random number generators to make certain events RNG based
-        //have choices with consequences ie.
-        //"allocate what percent to attack v defence"you focused to much on attack and died
-        //have a rpg kind of dialogue, potentially multiple choice and numeric input
+
+        
 
 
     }
