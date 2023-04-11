@@ -43,12 +43,12 @@ public class charcters {
 
     public static boolean battle(ArrayList player, ArrayList enemy){
 
-        int pHealth = Integer.valueOf((String) player.get(0));
-        int eHealth = Integer.valueOf((String) enemy.get(0));
-        int eSpeed = Integer.valueOf((String) player.get(2));
-        int pSpeed = Integer.valueOf((String) player.get(2));
-        int eDamage = Integer.valueOf((String) enemy.get(1));
-        int pDamage = Integer.valueOf((String) enemy.get(1));
+        int pHealth = (int) player.get(0);
+        int eHealth = (int) enemy.get(0);
+        int eSpeed = (int) player.get(2);
+        int pSpeed = (int) player.get(2);
+        int eDamage = (int) enemy.get(1);
+        int pDamage = (int) enemy.get(1);
         while(pHealth > 0 && eHealth > 0){
             //check who has a greater speed value Enemy or Player
             //if the enemy is faster
@@ -65,16 +65,16 @@ public class charcters {
             //else the player is faster and attackes first
             else{
                 //subtract the players damage from the enemys health
-                int playerDamage = Integer.valueOf((String) player.get(1));
-                enemy.set(0, (Integer.valueOf((String) enemy.get(0)) - playerDamage));
+                enemy.set(0, (eHealth-pDamage));
+                eHealth -= pDamage;
 
                 //Subtract the enemys damage from the players health 
-                int enemyDamage = Integer.valueOf((String) enemy.get(1));
-                player.set(0, (Integer.valueOf((String) player.get(0)) - enemyDamage));
+                player.set(0, (pHealth-eDamage));
+                pHealth -= eDamage;
 
             }
         }
-        if(Integer.valueOf((String) player.get(0)) > 0){
+        if(pHealth > 0){
             return true;
         }
         else{
