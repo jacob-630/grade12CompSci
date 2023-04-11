@@ -27,7 +27,7 @@ public class main {
         System.out.println("With inflation these days things can get pretty pricey so heres $100 "+
         "it wont get you far but it's a start I suppose.");
         additionalFunc.pause(3);
-        System.out.println("$100 has been added to your account.\n\n\n\n");
+        System.out.println("$100 has been added to your account.\n\n");
         additionalFunc.pause(5);
 
 
@@ -39,9 +39,9 @@ public class main {
         additionalFunc.pause(2);
         System.out.println("here it comes! now attack");
         additionalFunc.pause(5);
-        ArrayList enemy1 = charcters.createEnemy(1, 10, 15);
+        ArrayList enemy1 = charcters.createEnemy(100, 100, 1000);
 
-        //currently not working
+        //Call a battle between enemy and player
         if(charcters.battle(playerStats, enemy1)){
             System.out.println("very good you won!, your health is now " + playerStats.get(0));
         }
@@ -49,6 +49,35 @@ public class main {
             System.out.println("Oh no, they got you and you died :(");
             System.exit(0);
         }
+        
+        System.out.println("Alright "+name+" head over to see Sally the Salesman where you can "+
+        "purchase some upgrades");
+        additionalFunc.pause(9);
+
+
+
+        //Introduce Sally and the shop
+        System.out.println("Hi! I'm Sally the Salesman, Here to help with all your shopping needs");
+        System.out.println("Now what are you looking to buy? you only have one option so choose carefully"+
+        " (health, strength or speed)");
+        String upgrade = inp.nextLine().toLowerCase();
+        System.out.println("and how much money are you intending to spend");
+        int cashSpent = inp.nextInt();
+        if(cashSpent < (int) playerStats.get(3)){
+            charcters.shop(playerStats, upgrade, cashSpent);
+        }
+        else{
+            System.out.println("So youre trying to pull a fast one on me??"+
+            "you dont have that much money");
+            additionalFunc.pause(1);
+            System.out.println("GET OUT NOW!!!");
+        }
+        //INTRODUCTION CONCULDES
+
+
+
+        //MIDGAME BEGINS
+        
 
         
 
