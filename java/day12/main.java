@@ -63,7 +63,7 @@ public class main {
         String upgrade = inp.nextLine().toLowerCase();
         System.out.println("and how much money are you intending to spend");
         int cashSpent = inp.nextInt();
-        if(cashSpent < (int) playerStats.get(3)){
+        if(cashSpent <= (int) playerStats.get(3)){
             charcters.shop(playerStats, upgrade, cashSpent);
         }
         else{
@@ -77,7 +77,28 @@ public class main {
 
 
         //MIDGAME BEGINS
-        
+        System.out.println("Alright "+name+" I need you to go defeat the dragon sorcerer"+
+        " that being said, you may take whichever path youd like to complete this goal, "+
+        "from here you may choose:");
+        additionalFunc.pause(3);
+        System.out.println("Option A) the long and easy path \n or");
+        additionalFunc.pause(3);
+        System.out.println("Option B) the fast and hard path \n so what will it be?");
+        String eORh = inp.nextLine().toLowerCase();
+        while(!eORh.equals("hard") && !eORh.equals("easy")){
+            System.out.println("Please choose either 'easy' or  'hard'");
+            eORh = inp.nextLine();
+        }
+        if(eORh.equals("hard")){
+            System.out.println("So youve chosen the hard path. how daring.");
+            hardPath.runHardMode(playerStats);
+
+        }
+        else if(eORh.equals("easy")){
+            System.out.println("so youve chosen the easy path. well we all must start somwehere");
+        }
+
+
 
         
 
