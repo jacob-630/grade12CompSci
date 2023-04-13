@@ -96,6 +96,7 @@ public class main {
         }
         else if(eORh.equals("easy")){
             System.out.println("so youve chosen the easy path. well we all must start somwehere");
+            easyPath.runEasyPath(playerStats);
         }
 
 
