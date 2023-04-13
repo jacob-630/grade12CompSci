@@ -101,6 +101,29 @@ public class main {
 
 
 
+        System.out.println("Alright, this is your final chance to buy an upgrade so dont be stingy!");
+        System.out.println("Now what are you looking to buy? you only have one option so choose carefully"+
+        " (health, strength or speed)");
+        upgrade = inp.nextLine().toLowerCase();
+        System.out.println("and how much money are you intending to spend");
+        cashSpent = inp.nextInt();
+        if(cashSpent <= (int) playerStats.get(3)){
+            charcters.shop(playerStats, upgrade, cashSpent);
+        }
+        else{
+            System.out.println("So youre trying to pull a fast one on me??"+
+            "you dont have that much money");
+            additionalFunc.pause(1);
+            System.out.println("GET OUT NOW!!!");
+        }
+
+
+        //Finish the end of game with the final boss battle
+
+        
+
+
+
         
 
 
