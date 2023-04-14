@@ -101,11 +101,13 @@ public class main {
 
 
 
-        System.out.println("Alright, this is your final chance to buy an upgrade so dont be stingy!");
+        System.out.println("Alright, this is your final chance to buy an upgrade so dont be stingy! "+
+        "I'll even give you an extra $1000");
+        playerStats.set(3, (int) playerStats.get(3)+1000);
         System.out.println("Now what are you looking to buy? you only have one option so choose carefully"+
         " (health, strength or speed)");
         upgrade = inp.nextLine().toLowerCase();
-        System.out.println("and how much money are you intending to spend");
+        System.out.println("and how much money are you intending to spend you have $"+playerStats.get(3));
         cashSpent = inp.nextInt();
         if(cashSpent <= (int) playerStats.get(3)){
             charcters.shop(playerStats, upgrade, cashSpent);
@@ -116,11 +118,37 @@ public class main {
             additionalFunc.pause(1);
             System.out.println("GET OUT NOW!!!");
         }
-
+        additionalFunc.pause(6);
 
         //Finish the end of game with the final boss battle
+        System.out.println("alright "+name+" you have finally made your way to the final boss."+
+        " this is as far as I can go, so from here on out youre on your own");
 
-        
+        System.out.println("**walk in or turn around and leave (enter 1 to enter 2 to leave)**");
+        int goIn = inp.nextInt();
+        if(goIn == 2){
+            System.out.println("you came this far just to be a coward?");
+            System.out.println("Okay I guess...");
+            System.exit(0);
+        }
+
+        System.out.println("here it is..");
+        additionalFunc.pause(3);
+        System.out.println("The final boss");
+        additionalFunc.pause(3);
+        System.out.println("Good luck");
+        if(eORh.equals("easy")){
+            easyPath.easyEndGame(playerStats);
+        }
+        else{
+            hardPath.hardEndGame(playerStats);
+        }
+        additionalFunc.pause(7);
+        System.out.println("You have fought bravley and truly are an amazing warriror ");
+        additionalFunc.pause(3);
+        System.out.println("the name "+name+" the "+faction+" will surley go down in history...");
+        additionalFunc.pause(4);
+        System.out.println("Thank you for playing!");
 
 
 

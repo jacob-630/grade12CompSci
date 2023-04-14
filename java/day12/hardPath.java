@@ -10,13 +10,15 @@ public class hardPath {
 
         System.out.println("Gremlin boss: Here I come! Lets Fight");
         System.out.println("Dragon Solider: RAHHH!! HERE I COME TOO");
+        additionalFunc.pause(8);
         ArrayList Dsolider = charcters.createEnemy(600, 300, 400);
         ArrayList Gboss = charcters.createEnemy(400, 400, 400);
         charcters.battle(player, Gboss);
         charcters.battle(player, Dsolider);
         System.out.println("Wow you really stood your ground, but now you only have "+player.get(0)+" health but at least"+
-        "you were able to steal $400 from the enemies");
+        " you were able to steal $400 from the enemies");
         player.set(3, (int)player.get(3) + 400);
+        additionalFunc.pause(7);
 
         System.out.println("Now since youre taking the fast track we dont have time to go see sally so we're "+
         "heading straight up the volcano. up the dangerous way of course");
@@ -28,7 +30,7 @@ public class hardPath {
 
         player.set(0, (int) player.get(0)-(hits*100));
         if((int) player.get(0) > 0){
-            System.out.println("You made it to the top with "+ player.get(0) + "health left");
+            System.out.println("You made it to the top with "+ player.get(0) + " health left");
             System.out.println("Congratulations you've Made it to the final boos!");
             return true;
         }
@@ -59,6 +61,10 @@ public class hardPath {
             additionalFunc.pause(2);
             if(charcters.battle(player, dragonQueen)){
                 System.out.println("OH MY GOD!!! YOU WON!!!");
+                if((int) player.get(0) <= 0){
+                    System.out.println("You died while saving this world. You truly are a hero!");
+                    System.exit(0);
+                }
             }
         }
         
