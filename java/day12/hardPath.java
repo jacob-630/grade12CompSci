@@ -16,6 +16,7 @@ public class hardPath {
         charcters.battle(player, Dsolider);
         System.out.println("Wow you really stood your ground, but now you only have "+player.get(0)+" health but at least"+
         "you were able to steal $400 from the enemies");
+        player.set(3, (int)player.get(3) + 400);
 
         System.out.println("Now since youre taking the fast track we dont have time to go see sally so we're "+
         "heading straight up the volcano. up the dangerous way of course");
@@ -28,31 +29,38 @@ public class hardPath {
         player.set(0, (int) player.get(0)-(hits*100));
         if((int) player.get(0) > 0){
             System.out.println("You made it to the top with "+ player.get(0) + "health left");
+            System.out.println("Congratulations you've Made it to the final boos!");
+            return true;
         }
         else{
             System.out.println("Oh no the metors got you :(");
-            System.exit(0);
+            return false;
         }
-
-        System.out.println("Congratulations you've Made it to the final boos!");
-
-
-
-
         
+    }
 
+    public static void hardEndGame(ArrayList player){
+        System.out.println("like I said I wont be helping you so youre gonna need to take on "+
+        "both the bosses");
+        additionalFunc.pause(2);
+        System.out.println("Dragon King: We are here to stop you");
+        additionalFunc.pause(2);
+        System.out.println("Dragon Queen: We are the new rulers of this kingdom and nothing you do can change that");
+        additionalFunc.pause(2);
+        System.out.println("Dragon King: We are both going to fight you at the same time");
+        additionalFunc.pause(2);
+        System.out.println("Dragon Queen: Enough talking, lets fight");
+        additionalFunc.pause(2);
+        ArrayList dragonKing = charcters.createEnemy(1000, 1000, 750);
+        ArrayList dragonQueen = charcters.createEnemy(1000, 750, 1000);
 
-
-
-
-
-
-
-
-
-
-
-
-        return false;
+        if(charcters.battle(player, dragonKing)){
+            System.out.println("THE DRAGON KING IS DOWN, JUST THE QUEEN NOW!");
+            additionalFunc.pause(2);
+            if(charcters.battle(player, dragonQueen)){
+                System.out.println("OH MY GOD!!! YOU WON!!!");
+            }
+        }
+        
     }
 }
