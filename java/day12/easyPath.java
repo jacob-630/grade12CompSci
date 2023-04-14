@@ -69,29 +69,42 @@ public class easyPath {
         additionalFunc.pause(4);
         System.out.println("on top of this mountain is the dragon king, defeat him and youll win the game");
         System.out.println("since you chose the easy path you can just follow these stairs up to the top.");
+        return true;
+    }
+
+
+
+
+    public static void easyEndGame(ArrayList player){
+        Scanner inp = new Scanner(System.in);
+
+        System.out.println("Lets take on the dragon king and queen together!");
+        additionalFunc.pause(2);
+        System.out.println("Dragon King: We are here to stop you");
+        additionalFunc.pause(2);
+        System.out.println("Dragon Queen: We are the new rulers of this kingdom and nothing you do can change that");
+        additionalFunc.pause(2);
+        System.out.println("Dragon King: We are both going to fight you at the same time");
+        additionalFunc.pause(2);
+        System.out.println("Dragon Queen: Enough talking, lets fight");
+        additionalFunc.pause(2);
+
+        System.out.println("QUICK! who do you want to fight the king or the queen");
+        System.out.println("The King is slower but the Queen is weaker");
+        String bossChoice = inp.nextLine().toLowerCase();
+        ArrayList boss;
+        if(bossChoice.equals("king")){
+            boss = charcters.createEnemy(1000, 1000, 750);
+        }
+        else{
+            boss = charcters.createEnemy(1000, 750, 1000);
+        }
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return false;
+        if(charcters.battle(player, boss)){
+            System.out.println("HOORAY!! YOU GOT THEM, I GOT THE OTHER ONE TOO! WE WON!!!!");
+            additionalFunc.pause(2);
+        }
+        
     }
 }
