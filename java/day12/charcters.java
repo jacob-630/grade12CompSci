@@ -103,8 +103,6 @@ public class charcters {
         }
         else{
             player.set(0, 0);
-            System.out.println("Oh no you died to "+enemy);
-            System.exit(0);
             return false;
         }
     }

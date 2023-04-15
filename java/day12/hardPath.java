@@ -13,8 +13,16 @@ public class hardPath {
         additionalFunc.pause(8);
         ArrayList Dsolider = charcters.createEnemy(600, 300, 400);
         ArrayList Gboss = charcters.createEnemy(400, 400, 400);
-        charcters.battle(player, Gboss);
-        charcters.battle(player, Dsolider);
+
+       if(!charcters.battle(player, Gboss)){
+        System.out.println("You Died to the Goblin Boss");
+        System.exit(0);
+       }
+
+        if(!charcters.battle(player, Dsolider)){
+            System.out.println("The Dragon Solider killed you");
+            System.exit(0);
+        }
         System.out.println("Wow you really stood your ground, but now you only have "+player.get(0)+" health but at least"+
         " you were able to steal $400 from the enemies");
         player.set(3, (int)player.get(3) + 400);
@@ -61,11 +69,15 @@ public class hardPath {
             additionalFunc.pause(2);
             if(charcters.battle(player, dragonQueen)){
                 System.out.println("OH MY GOD!!! YOU WON!!!");
-                if((int) player.get(0) <= 0){
-                    System.out.println("You died while saving this world. You truly are a hero!");
-                    System.exit(0);
-                }
             }
+            else{
+                System.out.println("Oh no you died");
+                System.exit(0);
+            }
+        }
+        else{
+            System.out.println("Oh no you died");
+            System.exit(0);
         }
         
     }

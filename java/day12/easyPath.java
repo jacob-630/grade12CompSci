@@ -105,6 +105,10 @@ public class easyPath {
             System.out.println("HOORAY!! YOU GOT THEM, I GOT THE OTHER ONE TOO! WE WON!!!!");
             additionalFunc.pause(2);
         }
+        else{
+            System.out.println("Oh no you died");
+            System.exit(0);
+        }
         
     }
 }
