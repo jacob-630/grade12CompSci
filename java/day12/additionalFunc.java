@@ -63,7 +63,7 @@ public class additionalFunc {
         String upgrade = inp.nextLine().toLowerCase();
         System.out.println("and how much money are you intending to spend");
         int cashSpent = inp.nextInt();
-        if(cashSpent <= (int) player.get(3)){
+        if(cashSpent <= (int) player.get(3) && cashSpent >= 0){
             charcters.shop(player, upgrade, cashSpent);
         }
         else{

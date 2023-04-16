@@ -63,7 +63,7 @@ public class main {
         String upgrade = inp.nextLine().toLowerCase();
         System.out.println("and how much money are you intending to spend");
         int cashSpent = inp.nextInt();
-        if(cashSpent <= (int) playerStats.get(3)){
+        if(cashSpent <= (int) playerStats.get(3) && cashSpent >= 0){
             charcters.shop(playerStats, upgrade, cashSpent);
         }
         else{
@@ -91,12 +91,16 @@ public class main {
         }
         if(eORh.equals("hard")){
             System.out.println("So youve chosen the hard path. how daring.");
-            hardPath.runHardMode(playerStats);
+            if(!hardPath.runHardMode(playerStats)){
+                System.exit(0);
+            }
 
         }
         else if(eORh.equals("easy")){
             System.out.println("so youve chosen the easy path. well we all must start somwehere");
-            easyPath.runEasyPath(playerStats);
+            if(!easyPath.runEasyPath(playerStats)){
+                System.exit(0);
+            }
         }
 
 

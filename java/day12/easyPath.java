@@ -20,7 +20,7 @@ public class easyPath {
         System.out.println("mystic tree: RAHHHH GRRRR");
         additionalFunc.pause(3);
         System.out.println("Quick attack the mystic tree, theyre quite weak and slow but have a lot of health");
-        ArrayList mysticTree = charcters.createEnemy(10000, 100, 100);
+        ArrayList mysticTree = charcters.createEnemy(1000, 100, 100);
         additionalFunc.pause(5);
 
         if(charcters.battle(mysticTree, player)){

@@ -74,12 +74,10 @@ public class charcters {
             //if the enemy is faster
             if(eSpeed > pSpeed){
                 //Subtract the enemys damage from the players health 
-                player.set(0, (pHealth-eDamage));
                 pHealth -= eDamage;
 
                 //subtract the players damage from the enemys health
                 if(pHealth > 0){
-                    enemy.set(0, (eHealth-pDamage));
                     eHealth -= pDamage;
                 }
 
@@ -87,23 +85,22 @@ public class charcters {
             //else the player is faster and attackes first
             else{
                 //subtract the players damage from the enemys health
-                enemy.set(0, (eHealth-pDamage));
                 eHealth -= pDamage;
 
                 //Subtract the enemys damage from the players health 
                 if(eHealth > 0){
-                    player.set(0, (pHealth-eDamage));
                     pHealth -= eDamage;
                 }
 
             }
         }
-        if(pHealth > 0){
-            return true;
-        }
-        else{
+        if(eHealth > 0){
             player.set(0, 0);
             return false;
+        }
+        else{
+            player.set(0, pHealth);
+            return true;
         }
     }
 
