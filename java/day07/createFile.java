@@ -2,8 +2,8 @@ package day07;
 import java.io.File;
 import java.io.IOException;
 public class createFile {
-    public static void createFile(){
-        File newFile = new File("myFirstFile.txt");
+    public static void createFile(String n){
+        File newFile = new File(n);
 
         try{
             if(newFile.createNewFile()){
@@ -18,4 +18,5 @@ public class createFile {
             e.printStackTrace();
         }
     }
+    
 }

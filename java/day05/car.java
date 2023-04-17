@@ -13,7 +13,7 @@ public class car {
         this.make = make;
         this.model = model;
         this.year = year;
-        System.out.println(this.make + this.model + this.year);
+        System.out.println(this.make + " " + this.model + " " + this.year);
     
     }
 

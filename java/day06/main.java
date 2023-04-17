@@ -1,5 +1,7 @@
 package day06;
-import java.util.Scanner;;
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 public class main {
     public static void main(String[] args) {
         //create a pin for the user
@@ -24,7 +26,7 @@ public class main {
             //a loop to run for forever unless broken with 'break' command
             while(1 < 2){
                 System.out.println("What would you like to do? enter "
-                +"'deposit', 'withdraw', 'credit', 'cmpndInt', 'transfer' or anything else to leave");
+                +"'deposit', 'withdraw', 'credit', 'cmpndInt', 'transfer', 'checkBalance' or anything else to leave");
                 String chngs = inp.next().toLowerCase();
                 //first layer of if statements; check which account the user would like to manipulate:
                 if(chngs.equals("deposit")){
@@ -109,6 +111,9 @@ public class main {
                     else if(trnsfr.equals("stoc")){
                         accountChanges.trnsfr(2, TransfrAmt);
                     }
+                }
+                else if(chngs.equals("checkbalance")){
+                    accountChanges.checkBalancs();
                 }
                 else{
                     System.out.println("okay, have a good day");
