@@ -11,10 +11,14 @@ print(array)
 
 cont = True
 while cont:
-    end = input("would you like to change an element? ")
+    end = input("would you like to change an element, you may also 'replace all' of an element? ").lower()
     if end == "no":
         cont = False
         break
+    elif end == "replace all":
+        og = int(input("what number would you like to replace all of"))
+        new = int(input("what would you like to change these numbers to?"))
+        
     elementChng = int(input("Which element would you like to change? (note: arrays are zero indexed) "))
     if 0 > elementChng or elementChng > length:
         print("This index does not exist in this array")
