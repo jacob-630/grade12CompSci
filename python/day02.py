@@ -32,3 +32,5 @@ while cont:
     print(array);
 print("Your score is "+ str(sum(array)) +" out of " + str(length * 6) + " thats " + str(int((sum(array) / (length * 6)) * 100)) + "%, "+
       "you also changed a total of " + str(totalChng) + " numbers.")   
+
+
