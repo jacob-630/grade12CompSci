@@ -8,8 +8,26 @@ def addDice(dice):
     
     return diceSum
 
+def straight(dice):
+     if(dice[3] - dice[2] != 2) and (dice[2] - dice[1] != 2):
+        sStraight = 0
+        for i in range(4):
+            if(dice[i+1]-dice[i] == 1):
+                sStraight += 1
+            else:
+                continue
+        if sStraight == 3:
+            print("You have a small straight")
+            return 30;
+        elif sStraight == 4:
+            print("You have a large straight")
+            return 40
+        else:
+            return 0;
+     else:
+         return 0;
+        
 
-            
 
             
 def tallyPoints(dice):
@@ -23,17 +41,8 @@ def tallyPoints(dice):
         score += 50
 
     #Check for straights both long and small
-    elif(dice[3] - dice[2] != 2) and (dice[2] - dice[1] != 2):
-        sStraight = 0
-        for i in range(4):
-            if(dice[i+1]-dice[i] == 1):
-                sStraight += 1
-        if sStraight == 3:
-            print("You have a small straight")
-            score += 30;
-        elif sStraight == 4:
-            print("You have a large straight")
-            score += 40
+    elif straight(dice) != 0:
+        score += straight(dice)
     
 
     #Check for four of a kind
@@ -72,7 +81,7 @@ while(con):
         final.append(lockIn)
 
     elif choice == "3":
-        print("your score is: " + str(tallyPoints([6, 2, 3, 4, 5]) + addDice(dice)))
+        print("your score is: " + str(tallyPoints(dice) + addDice(dice)))
         con = False
 
 
