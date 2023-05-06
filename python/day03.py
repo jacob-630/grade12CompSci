@@ -22,17 +22,7 @@ def tallyPoints(dice):
         print("You have a Yahtzee")
         score += 50
 
-
-    #Check for large straight
-    elif ((dice[0] + dice[4] == 6) and (dice[1] + dice [3] == 6) and (dice[2] * 2 == 6)):
-        print("You have a large straight")
-        score += 40
-    elif((dice[0] + dice[4] == 8) and (dice[1] + dice[3] == 8) and (dice[2] * 2 == 6)):
-        print("You have a large straight")
-        score += 40
-
-
-    #Check for Small straight
+    #Check for straights both long and small
     elif(dice[3] - dice[2] != 2) and (dice[2] - dice[1] != 2):
         sStraight = 0
         for i in range(4):
@@ -41,6 +31,9 @@ def tallyPoints(dice):
         if sStraight == 3:
             print("You have a small straight")
             score += 30;
+        elif sStraight == 4:
+            print("You have a large straight")
+            score += 40
     
 
     #Check for four of a kind
@@ -79,7 +72,7 @@ while(con):
         final.append(lockIn)
 
     elif choice == "3":
-        print("your score is: " + str(tallyPoints(dice) + addDice(dice)))
+        print("your score is: " + str(tallyPoints([6, 2, 3, 4, 5]) + addDice(dice)))
         con = False
 
 
