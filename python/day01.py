@@ -8,7 +8,7 @@ def myMaths(a, b):
     module = ". The module of "+ str(a) + " and " + str(b) + " is "+ str(a%b);
     power = ". The result of "+ str(a) + " to the power of " + str(b) + " is "+ str(math.pow(a, b));
     pythagorean = ". The result of the pythagorean therom with "+ str(a) + " and " + str(b) + " is "+ str(math.sqrt((math.pow(a, 2) + math.pow(b, 2))));
-    print(sum + difference + product + quotient + module + power + pythagorean)
+    print(sum + difference + product + quotient + module + power + pythagorean);
 
 
 name = input("What is your name? ")

@@ -6,7 +6,7 @@ def addDice(dice):
     for i in dice:
         diceSum += i
     
-    return diceSum
+    return diceSum;
 
 def straight(dice):
      if(dice[3] - dice[2] != 2) and (dice[2] - dice[1] != 2):
@@ -17,10 +17,10 @@ def straight(dice):
             else:
                 continue
         if sStraight == 3:
-            print("You have a small straight")
+            print("You rolled a small straight")
             return 30;
         elif sStraight == 4:
-            print("You have a large straight")
+            print("You rolled a large straight")
             return 40
         else:
             return 0;
@@ -37,7 +37,7 @@ def tallyPoints(dice):
 
     #Check for Yahtzee
     if(dice[0] == dice[4]):
-        print("You have a Yahtzee")
+        print("You rolled a Yahtzee")
         score += 50
 
     #Check for straights both long and small
@@ -47,13 +47,13 @@ def tallyPoints(dice):
 
     #Check for four of a kind
     elif(dice[0] == dice[3] or dice[1] == dice[4]):
-        print("You have four of a kind")
+        print("You rolled four of a kind")
         score += 25
 
 
     #Check for three of a kind
     elif((dice[2] == dice[4]) or (dice[1] == dice[3]) or (dice[0] == dice[2])):
-        print("You have three of a kind")
+        print("You rolled three of a kind")
         score += 20
     return score
 

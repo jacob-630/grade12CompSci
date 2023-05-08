@@ -4,13 +4,10 @@ array = []
 for i in range(length):
     array.append(random.randint(1, 6))
 print(array)
-cont = True
 totalChng = 0
-while cont:
+while True:
     end = input("would you like to change an element, you may also 'replace all' of an element? ").lower()
-    if end == "no":
-        cont = False
-        break
+    if end == "no": break
     elif end == "replace all":
         og = int(input("what number would you like to replace all of? "))
         new = int(input("what would you like to change these numbers to? "))
@@ -27,7 +24,7 @@ while cont:
         if 1 > newEl or newEl > 6:
             print("The number entered is not between 1 and 6.")
             continue
-        array[elementChng] = newEl
+        array[elementChng] = newEl; 
         totalChng += 1;
     print(array);
 print("Your score is "+ str(sum(array)) +" out of " + str(length * 6) + " thats " + str(int((sum(array) / (length * 6)) * 100)) + "%, "+
