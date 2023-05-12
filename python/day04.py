@@ -1,5 +1,7 @@
+
+
 name = input("What is your first and last name? ").lower()
-baseS = "why hello " + name + " i hope that this message finds you well, this message is over 100 charcters long, it will be the string your letter is searched for in."
+baseS = "why hello " + name + " i hope that this message finds you well, this message is over 100 charcters long, it will be the string your letter is searched for within."
 print(baseS)
 
 letter = input("what letter are you searching for? ")
