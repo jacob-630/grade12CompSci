@@ -1,15 +1,25 @@
 import random
 
+#array of potential words
 words = ["laptop", "jacket", "paper", "calculator", "pencil", "monitor", "charger", "cellphone", "container", "television"]
 
+#randomly select a word and split it into an array of charcters
 word = words[random.randint(0, 9)]
 word = [*word]
-guesses = []
+
+
+#test
 print(word);
+
+#make an array of '_' to represent the unknown charcters
+guesses = []
 for i in range(len(word)):
     guesses.append("_")
 
+#initalize the strike counter
 strikes = 0;
+
+#run through and get the players guesses, check if they match, if not add strikes, if they do fill in charcters
 while strikes < 5:
     guess = str(input("what is your guess? ")).lower()
     if guess not in word:
