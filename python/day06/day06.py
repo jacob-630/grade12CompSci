@@ -32,6 +32,7 @@ for i in range(len(word)):
 #initalize the strike counter
 strikes = 0;
 
+
 #run through and get the players guesses, check if they match, if not add strikes, if they do fill in charcters
 while strikes < 5:
     guess = str(input("what is your guess? ")).lower()
