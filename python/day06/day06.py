@@ -1,19 +1,28 @@
 import random
+import requests
 
-from english_words import get_english_words_set
-web2lowerset = get_english_words_set(['web2'], lower=True)
 
-print(web2lowerset)
-#array of potential words
-words = ["bedroom", "jacket", "paper", "calculator", "pencil", "monitor", "charger", "cellphone", "container", "television"]
+#Import a list of words from the internet
+word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
+response = requests.get(word_site)
+WORDS = response.content.splitlines()
+
+#loop through the list removing and words less than 4 letters
+for i in WORDS:
+     if len(i) < 4:
+          WORDS.remove(i)
 
 #randomly select a word and split it into an array of charcters
-word = words[random.randint(0, 9)]
+word = str(WORDS[random.randint(0, (len(WORDS)-1))])
 word = [*word]
 
+#the format of the retrived words needs to be altered to make it appropriate for use
+word.pop(0)
+word.pop(0)
+word.pop()
 
 #test
-#print(word);
+print(word);
 
 #make an array of '_' to represent the unknown charcters
 guesses = []
@@ -37,3 +46,7 @@ while strikes < 5:
          break
     print(guesses)
 
+#If the player loses turn the correct word into a string and print it out for the user
+correctAnswer = "".join(word)
+if strikes >= 5:
+     print(f"Oh no! you lost, The correct word was {correctAnswer}")
