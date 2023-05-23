@@ -1,6 +1,9 @@
 import random
 import requests
 
+### There is an additional folder that I have, im not sure if it is neccessary for the code to work,
+### If it is I can attach it upon request or the complete code can be found at:
+# "https://github.com/jacob-630/grade12CompSci/tree/main/python/day06"
 
 #Import a list of words from the internet
 word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
@@ -22,7 +25,7 @@ word.pop(0)
 word.pop()
 
 #test
-print(word);
+#print(word);
 
 #make an array of '_' to represent the unknown charcters
 guesses = []
@@ -34,6 +37,7 @@ strikes = 0;
 
 
 #run through and get the players guesses, check if they match, if not add strikes, if they do fill in charcters
+print(guesses)
 while strikes < 5:
     guess = str(input("what is your guess? ")).lower()
     if guess not in word:
