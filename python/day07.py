@@ -16,15 +16,16 @@ b = open("rwf.txt", "r")
 
 
 l = ".".join(b.readlines())
-l = l.split(".")
-b.close()
 print(l)
+l = [*l]
+b.close()
+print(len(l))
 
 running = True
 while running:
     generated = []
     numbers = int(input("How many random numbers would you like? (6 for lotto, 7 for lotto Max)"))
     for i in range(numbers):
-        generated.append(l[0])
+        generated.append(l[random.randint(0, 48)])
     print(f"your random numbers are {generated}")
 
