@@ -24,15 +24,15 @@ print(len(l))
 running = True
 while running:
     generated = []
-    final = ""
+    
     numbers = int(input("How many random numbers would you like? (6 for lotto, 7 for lotto Max)"))
     for i in range(numbers):
-        generated.append(l[random.randint(0, 48)])
-        for i in generated:
-            final += f"{i}, "
+        generated.append(l[random.randint(0, 9)])
+    final = "".join(generated)
     print(f"your random numbers are {final}")
     cont = str(input("do you wish to continue? ('yes' or 'no')"))
     if cont == "no":
+        print("okay thanks for using this generator!")
         break
     else:
         continue
