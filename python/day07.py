@@ -16,10 +16,10 @@ b = open("rwf.txt", "r")
 
 
 l = ".".join(b.readlines())
-print(l)
+
 l = [*l]
 b.close()
-print(len(l))
+
 
 running = True
 while running:
@@ -28,11 +28,11 @@ while running:
     numbers = int(input("How many random numbers would you like? (6 for lotto, 7 for lotto Max)"))
     for i in range(numbers):
         generated.append(l[random.randint(0, 9)])
-    final = "".join(generated)
+    final = ", ".join(generated)
     print(f"your random numbers are {final}")
     cont = str(input("do you wish to continue? ('yes' or 'no')"))
     if cont == "no":
-        print("okay thanks for using this generator!")
+        print("okay, thanks for using this generator!")
         break
     else:
         continue
