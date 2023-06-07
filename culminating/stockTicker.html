@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeTracker</title>
+    <script src="stockTicker.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="topBar">
+            <h2 class="logo">TradeTracker</h2>
+            <div class="topLinks">
+                <a href="investmentCalc.html">Free Investment Calculator</a>
+                <a href="about.html">About TradeTracker</a>
+                <a href="">header link three</a>
+            </div>
+        </div>
+        <div class="headerContent">
+            <div class="headerContentLeft">
+                <h1 style="flex-wrap:wrap;">TradeTrackers Free Investment Calculator</h1>
+                <p>This is TradeTrackers free stock tracker, using a stock tag
+                    we can calculate the current price of a stock as well as provide any other additional 
+                    information about the specific stock.
+                </p>
+            </div>
+            <div class="imageHolder">
+                <p>this is a placeholder for an image</p>
+            </div>
+        </div>
+    </div>
+    <div class="secTwo">
+        <h2 style="text-align:center;font-size:36px;font-weight:bolder;color:#1F2937;">Please input the stock ticker symbol:</h2>
+        <table class="investmentCalcInfo" align="center" border="solid"  >
+            <tr align="left">
+                <th><label for="PrincipalInvestment"> Principal Investment: </label></th>
+                <td><input type="number" name="PrincipalInvestment" id="usersPrincipalInvestment">$</td>
+            </tr>
+            <tr align="left">
+                <th><label for="HoldDuration"> Hold Duration: </label></th>
+                <td><input type="number" name="HoldDuration" id="userHoldDuration">years</td>
+            </tr>
+            <tr align="left">
+                <th><label for="avgRateOfReturn"> Averge Annual Rate of Return: </label></th>
+                <td><input type="number" name="avgRateOfReturn" id="userAvgRateOfReturn">%</td>
+            </tr>
+            <!-- <tr align="left">
+                <th><label for="AdditionalContributions">Additional Annual Contribution:</label></th>
+                <td><input type="number" name="AdditionalContributions" id="userAdditionalContribution">$</td>
+            </tr> -->
+        </table>
+        <button id="investmentCalcBtn">Calculate</button>
+    </div>
+    
+    <div class="footer">
+        <p>Copyright @ Jacob Vaanholt 2023</p>
+    </div>
+</body>
+</html>
+
+
+
+
