@@ -158,6 +158,11 @@ button{
     border-color:blue;*/
 }
 
+.secTwo{
+    text-align: center;
+    justify-content: center;
+}
+
 .quoteSec{
     padding-top:100px;
     padding-bottom: 100px;
@@ -240,10 +245,12 @@ button{
 
 #calculateAnswerArea{
     text-align: center;
+    justify-content: center;
 }
 
 #investmentCalcBtn{
     justify-content: center;
+    margin: 1%;
 }
 
 #aboutTradeTracker{
@@ -288,4 +295,10 @@ button{
     flex: 1 1 0;
     border-style: solid;
     border-width: 1px;
+}
+
+#stockTickerSearch{
+    text-align: center;
+    justify-content: center;
+    margin: 1%;
 }
