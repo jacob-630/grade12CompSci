@@ -11,5 +11,5 @@ signUpBtn2.addEventListener("click", signUp);
 
 //Function for signing up to TradeTracker
 function signUp(){
-    window.alert("unfortunatley this feature has not been created yet");
+    window.alert("unfortunatley this feature has not been implemented yet");
 }
